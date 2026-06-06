@@ -18,7 +18,6 @@ app.get("/", (req, res) => {
 
 connectDB();
 
-
 app.use("/api/leads", leadRoutes);
 
 app.use(errorMiddleware);
