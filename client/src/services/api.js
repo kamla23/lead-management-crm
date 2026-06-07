@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = 'https://lead-management-crm-1.onrender.com/api/leads';
+ const url = "https://lead-management-crm-ap4b.onrender.com/api/leads";
 
 export const getleads = (q = '', st = '', p = 1) => {
   const queryStr = q.trim();

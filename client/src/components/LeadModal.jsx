@@ -90,19 +90,19 @@ function LeadModal({ open, onclose, onsave, cur }) {
         <form onSubmit={handleSubmit} className="modal-form">
           <div className="form-group">
             <label>Full Name</label>
-            <input type="text" name="name" value={formData.name} onChange={handleChange} required placeholder="John Doe" />
+            <input type="text" name="name" value={formData.name} onChange={handleChange} required placeholder="Enter your Full Name" />
           </div>
           <div className="form-group">
             <label>Email Address</label>
-            <input type="email" name="email" value={formData.email} onChange={handleChange} required placeholder="john@example.com" />
+            <input type="email" name="email" value={formData.email} onChange={handleChange} required placeholder="Enter your Email..." />
           </div>
           <div className="form-group">
             <label>Phone Number</label>
-            <input type="text" name="phone" value={formData.phone} onChange={handleChange} required placeholder="9876543210" />
+            <input type="text" name="phone" value={formData.phone} onChange={handleChange} required placeholder="Enter your Phone Number" />
           </div>
           <div className="form-group">
             <label>Company Name</label>
-            <input type="text" name="company" value={formData.company} onChange={handleChange} placeholder="Acme Corp" />
+            <input type="text" name="company" value={formData.company} onChange={handleChange} placeholder="Enter your Company Name" />
           </div>
           <div className="form-group">
             <label>Lead Status</label>
