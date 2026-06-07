@@ -1,13 +1,18 @@
 .dashboard-page {
   width: 100%;
   padding-bottom: 20px;
+  padding: 16px;
+  box-sizing: border-box;
 }
+
 
 .dashboard-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .header-title h1 {
@@ -51,7 +56,7 @@
 
 .metrics-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 16px;
   margin-bottom: 32px;
 }
@@ -65,6 +70,11 @@
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.01);
+  transition: transform 0.2s ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-3px);
 }
 
 .card-content {
@@ -98,6 +108,7 @@
   width: 20px;
   height: 20px;
 }
+
 
 .metric-card.total {
   border-left: 4px solid #64748b;
@@ -147,21 +158,75 @@
   color: #dc2626;
 }
 
+
 .dashboard-content-table {
   background: #ffffff;
   border-radius: 14px;
   border: 1px solid #e2e8f0;
-  overflow: hidden;
+  overflow-x: auto;  
 }
 
-@media (max-width: 640px) {
+
+@media (max-width: 1024px) {
+  .header-title h1 {
+    font-size: 20px;
+  }
+
+  .card-count {
+    font-size: 22px;
+  }
+
+  .metrics-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+
+@media (max-width: 768px) {
   .dashboard-header {
     flex-direction: column;
     align-items: flex-start;
-    gap: 16px;
   }
+
   .add-lead-btn {
     width: 100%;
     justify-content: center;
+  }
+
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .metric-card {
+    padding: 16px;
+  }
+
+  .card-count {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-title h1 {
+    font-size: 18px;
+  }
+
+  .header-title p {
+    font-size: 12px;
+  }
+
+  .add-lead-btn {
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  .metric-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .card-icon-wrapper {
+    align-self: flex-end;
   }
 }

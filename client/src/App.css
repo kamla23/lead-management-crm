@@ -4,28 +4,35 @@
   box-sizing: border-box;
 }
 
+/* ================= BODY ================= */
 body {
   font-family: 'Inter', sans-serif;
   background-color: #f8fafc;
   color: #111827;
 }
 
+/* ================= MAIN LAYOUT ================= */
 .dash-container {
   display: flex;
   min-height: 100vh;
 }
 
+/* ================= MAIN CONTENT ================= */
 .main-content {
   flex: 1;
   padding: 40px;
   overflow-y: auto;
+  transition: all 0.3s ease;
 }
 
+/* ================= HEADER ================= */
 .head {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .head h1 {
@@ -34,6 +41,7 @@ body {
   color: #111827;
 }
 
+/* ================= BUTTON ================= */
 .btn {
   background-color: #6366f1;
   color: white;
@@ -43,6 +51,7 @@ body {
   font-weight: 500;
   cursor: pointer;
   transition: background 0.2s;
+  white-space: nowrap;
 }
 
 .btn:hover {
@@ -58,4 +67,48 @@ body {
 .btn-icon {
   width: 16px;
   height: 16px;
+}
+
+/* ================= 📱 TABLET ================= */
+@media (max-width: 1024px) {
+  .main-content {
+    padding: 24px;
+  }
+
+  .head h1 {
+    font-size: 20px;
+  }
+}
+
+/* ================= 📱 MOBILE ================= */
+@media (max-width: 768px) {
+  .dash-container {
+    flex-direction: column; /* 🔥 sidebar upar aa jayega */
+  }
+
+  .main-content {
+    padding: 16px;
+  }
+
+  .head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ================= 📱 SMALL MOBILE ================= */
+@media (max-width: 480px) {
+  .head h1 {
+    font-size: 18px;
+  }
+
+  .btn {
+    padding: 8px;
+    font-size: 13px;
+  }
 }

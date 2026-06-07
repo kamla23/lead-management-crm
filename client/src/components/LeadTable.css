@@ -13,6 +13,7 @@
   gap: 16px;
   border-bottom: 1px solid #e2e8f0;
   background-color: #fafafa;
+  flex-wrap: wrap;
 }
 
 .search-box,
@@ -28,6 +29,7 @@
 
 .search-box {
   flex: 1;
+  min-width: 200px;
 }
 
 .control-icon {
@@ -54,8 +56,9 @@
   cursor: pointer;
 }
 
+
 .table-container {
-  overflow-x: auto;
+  overflow-x: auto; 
 }
 
 table {
@@ -63,6 +66,7 @@ table {
   border-collapse: collapse;
   text-align: left;
   font-size: 14px;
+  min-width: 700px; 
 }
 
 th {
@@ -71,6 +75,7 @@ th {
   font-weight: 600;
   padding: 14px 16px;
   border-bottom: 1px solid #e2e8f0;
+  white-space: nowrap;
 }
 
 td {
@@ -83,16 +88,20 @@ td {
 tr:hover td {
   background-color: #f8fafc;
 }
+
+
 .lead-date {
   color: #64748b;
   font-size: 13px;
   font-weight: 500;
   white-space: nowrap;
 }
+
 .lead-name {
   font-weight: 500;
   color: #0f172a;
 }
+
 .lead-phone {
   font-family: monospace;
   color: #475569;
@@ -107,12 +116,6 @@ tr:hover td {
   font-size: 13.5px;
 }
 
-.no-data {
-  text-align: center;
-  padding: 32px;
-  color: #64748b;
-}
-
 .badge {
   display: inline-flex;
   padding: 4px 10px;
@@ -121,26 +124,6 @@ tr:hover td {
   font-weight: 500;
 }
 
-.badge-new {
-  background-color: #eff6ff;
-  color: #1d4ed8;
-}
-.badge-contacted {
-  background-color: #fffbeb;
-  color: #b45309;
-}
-.badge-qualified {
-  background-color: #f5f3ff;
-  color: #6d28d9;
-}
-.badge-converted {
-  background-color: #ecfdf5;
-  color: #047857;
-}
-.badge-lost {
-  background-color: #fef2f2;
-  color: #b91c1c;
-}
 
 .action-buttons {
   display: flex;
@@ -163,21 +146,7 @@ tr:hover td {
   width: 14px;
   height: 14px;
 }
-.action-btn.edit {
-  color: #475569;
-}
-.action-btn.edit:hover {
-  background-color: #f1f5f9;
-  color: #0f172a;
-  border-color: #94a3b8;
-}
-.action-btn.delete {
-  color: #ef4444;
-}
-.action-btn.delete:hover {
-  background-color: #fef2f2;
-  border-color: #fca5a5;
-}
+
 
 .pagination {
   display: flex;
@@ -187,6 +156,7 @@ tr:hover td {
   gap: 16px;
   background-color: #f8fafc;
   border-top: 1px solid #e2e8f0;
+  flex-wrap: wrap;
 }
 
 .pag-btn {
@@ -203,22 +173,55 @@ tr:hover td {
   opacity: 0.5;
   cursor: not-allowed;
 }
-.pag-btn:not(:disabled):hover {
-  background-color: #f1f5f9;
-}
-.pag-icon {
-  width: 16px;
-  height: 16px;
-  color: #475569;
-}
+
 .pag-info {
   font-size: 13px;
   color: #475569;
   font-weight: 500;
 }
 
-@media (max-width: 640px) {
+
+@media (max-width: 1024px) {
+  table {
+    font-size: 13px;
+  }
+
+  th, td {
+    padding: 12px;
+  }
+}
+
+
+@media (max-width: 768px) {
   .table-controls {
     flex-direction: column;
+  }
+
+  .search-box,
+  .filter-box {
+    width: 100%;
+  }
+
+  .action-buttons {
+    gap: 6px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  table {
+    font-size: 12px;
+  }
+
+  th, td {
+    padding: 10px;
+  }
+
+  .lead-notes {
+    max-width: 120px;
+  }
+
+  .pagination {
+    gap: 8px;
   }
 }
